@@ -1,4 +1,12 @@
 const express = require("express")
+const mysql = require("mysql")
+
+const conn = mysql.createConnection({
+    database: "parkingms",
+    host: "localhost",
+    user: "root",
+    password: ""
+})
 
 const app = express()
 app.use(express.static("public"))
@@ -17,8 +25,17 @@ app.get("/services", (req,res)=>{
     res.render("services.ejs")
 })
 app.get("/booknow", (req,res)=>{
-    res.render("locations.ejs")
+    conn.query("SELECT * FROM locations", (sqlErr, locations)=>{
+        if(sqlErr){
+            res.status(500).render("500.ejs", {message: "Server Error: Contact Admin if this persists"})
+        }else{
+            console.log(locations);
+            // destructuring objects in js -- es6 feature
+            res.render("locations.ejs", {locations: locations})
+        }
+    })    
 })
+
 app.get("/spaces", (req,res)=>{
     // depending the location, we will fetch all spaces for that location
     res.render("spaces.ejs")

@@ -5,12 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locations - Eldoret City Center Parking</title>
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/locations.css">
     <link rel="shortcut icon" href="images/3.png" type="image/x-icon">
 </head>
 <body>
    <%- include("_header.ejs") %>
     <main>
-        <h1> Locations </h1>
+       <section class="locations">
+            <h1>Our different Parking Locations within Eldoret</h1>
+
+            <ul>
+                <% locals.locations.forEach(parking => { %>
+                    <li>
+                        <a href="/spaces?location=<%=parking.location_id%>">
+                            <h2> <%= parking.location_name %> </h2>
+                            <p>Map  </p>
+                            <p>Long: <%= parking.longitude %> </p>
+                            <p>Lat: <%= parking.latitude %> </p>
+                        </a>
+                    </li>
+                <% }) %>
+            </ul>
+
+       </section>
+       
     </main>
     <%- include("_footer.ejs") %>
 </body>
