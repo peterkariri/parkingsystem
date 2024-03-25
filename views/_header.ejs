@@ -1,14 +1,26 @@
 <header>
-    <img src="images/3.png" alt="city Center logo">
-    <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/services">Services</a>
-        <a href="/booknow">Spaces</a>
-        <a href="/contact">Contact Us</a>
+    <img src="images/3.png" alt="city Center logo" />
+    <nav id="main-nav">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/services">Services</a>
+      <a href="/booknow">Spaces</a>
+      <a href="/contact">Contact Us</a>
     </nav>
     <nav>
-        <a href="/signin">Sign In</a>
-        <a href="/signup">Sign Up</a>
+      <a href="/signin">Sign In</a>
+      <a href="/signup">Sign Up</a>
     </nav>
-</header>
+    <button id="menu-btn">
+      <ion-icon name="menu-outline"></ion-icon>
+    </button>
+  </header>
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mainNav = document.getElementById("main-nav");
+    if (menuBtn) {
+      menuBtn.addEventListener("click", () => {
+        mainNav.classList.toggle("open");
+      });
+    }
+  </script>

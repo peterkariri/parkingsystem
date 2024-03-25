@@ -1,0 +1,16 @@
+.locations {
+    text-align: center;
+  }
+  .locations ul {
+    display: flex;
+    gap: 18px;
+    list-style: none;
+    flex-wrap: wrap;
+   }
+  .locations ul li {
+    text-align: center;
+    border: 1px solid black;
+    padding: 16px;
+    width: 45%;
+  }
+  
