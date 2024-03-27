@@ -1,0 +1,25 @@
+
+label,
+input {
+  margin-bottom: 10px;
+}
+  form {
+    border: 2px solid pink;
+    border-radius: 5px;
+    box-shadow: 0 0 10px pink;
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+   input[type="submit"] {
+    background-color: blue;
+    color: white;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  

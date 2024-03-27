@@ -17,7 +17,7 @@
             <ul>
                 <% locals.locations.forEach(parking => { %>
                     <li>
-                        <a href="/spaces?location=<%=parking.location_id%>">
+                        <a href="/spaces?location=<%=parking.location_id%>"><!-- //sendng to database using a query parameter(?) -->
                             <h2> <%= parking.location_name %> </h2>
                             <p>Map  </p>
                             <p>Long: <%= parking.longitude %> </p>

@@ -10,8 +10,8 @@ CREATE TABLE bookings(booking_id INT AUTO_INCREMENT, user  VARCHAR(100), space I
 
 
 INSERT INTO users (email, fullname, phone, password) VALUES
-  ('john@gmail.com', 'John Doe', '+254722123456', 'hashed_password1'),
-  ('jane@gmail.com', 'Jane Doe', '+254711765432', 'hashed_password2'),
+  ('peter@gmail.com', 'peter Doe', '+254722123456', 'hashed_password1'),
+  ('mercy@gmail.com', 'Mercy Doe', '+254711765432', 'hashed_password2'),
   ('david@gmail.com', 'David Kamau', '+254700987654', 'hashed_password3');
 
 INSERT INTO locations (location_id, location_name, latitude, longitude) VALUES

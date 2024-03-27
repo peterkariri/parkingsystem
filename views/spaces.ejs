@@ -5,13 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spaces - Eldoret City Center Parking</title>
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/spaces.css">
     <link rel="shortcut icon" href="images/3.png" type="image/x-icon">
 </head>
 <body>
    <%- include("_header.ejs") %>
+   <section>
     <main>
         <h1> Spaces</h1>
+        <h2>bikes</h2>
+        <ul>
+            <% locals.spaces.filter(space=>space.space_category==="bikes").forEach(space=>{%>
+                <li>
+                    
+                        <h3> <%= space.space_label %> </h3>
+                        <% if(space.occupied==0){%>
+                            <p style="color: green;">Available</p>
+                            <a href="/bookspace?space_id=<%=space.space_id%>">Book Now</a>
+                            <% }else{%>
+                                <p style="color: orangered;">Occupied</p>
+                                <%}%>
+                    
+                </li>
+                
+                <%}) %>
+        </ul>
+        <h2>cars</h2>
+        <ul>
+            <% locals.spaces.filter(space=>space.space_category==="cars").forEach(space=>{%>
+                <li>
+                    
+                        <h3> <%= space.space_label %> </h3>
+                        <% if(space.occupied==0){%>
+                            <p style="color: green;">Available</p>
+                            <a href="/bookspace?space_id=<%=space.space_id%>">Book Now</a>
+                            <% }else{%>
+                                <p style="color: orangered;">Occupied</p>
+                                <%}%>
+                    
+                </li>
+                
+                <%}) %>
+        </ul>
+        <h2>trailers</h2>
+        <ul>
+            <% locals.spaces.filter(space=>space.space_category==="trailers").forEach(space=>{%>
+                <li>
+                    
+                        <h3> <%= space.space_label %> </h3>
+                        <% if(space.occupied==0){%>
+                            <p style="color: green;">Available</p>
+                            <a href="/bookspace?space_id=<%=space.space_id%>">Book Now</a>
+                            <% }else{%>
+                                <p style="color: orangered;">Occupied</p>
+                                <%}%>
+                    
+                </li>
+                
+                <%}) %>
+        </ul>
+        <h2>trucks</h2>
+        <ul>
+            <% locals.spaces.filter(space=>space.space_category==="trucks").forEach(space=>{%>
+                <li>
+                    
+                        <h3> <%= space.space_label %> </h3>
+                        <% if(space.occupied==0){%>
+                            <p style="color: green;">Available</p>
+                            <a href="/bookspace?space_id=<%=space.space_id%>">Book Now</a>
+                            <% }else{%>
+                                <p style="color: orangered;">Occupied</p>
+                                <%}%>
+                    
+                </li>
+                
+                <%}) %>
+        </ul>
     </main>
+   </section>
+    
     <%- include("_footer.ejs") %>
 </body>
 </html>
